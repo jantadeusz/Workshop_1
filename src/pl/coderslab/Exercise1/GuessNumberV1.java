@@ -1,4 +1,4 @@
-package pl.coderslab.guessNumberV1;
+package pl.coderslab.Exercise1;
 
 import java.util.InputMismatchException;
 import java.util.Random;

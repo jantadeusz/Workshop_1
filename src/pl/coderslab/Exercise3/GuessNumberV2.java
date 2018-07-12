@@ -15,14 +15,9 @@ public class GuessNumberV2 {
         int i = 0;
         int input = 0;
         while (true) {
-            input = 0;
             int guess = (max - min) / 2 + min;
             System.out.println("Zgaduję: " + guess);
             System.out.println("Pobierz odpowiedź z zestawu:  za dużo, za mało, zgadłeś.");
-//            System.out.println("Pobierz odpowiedź z zestawu:  (wpisz w konsoli odpowiednią cyfrę): \n" +
-//                    "1 - za dużo,\n" +
-//                    "2 - za mało \n" +
-//                    "3 - zgadłeś. ");
             i++;
             System.out.println("Zgadłem? (wpisz w konsoli: '1'-tak, '2'-nie): ");
             input = scan.nextInt();
@@ -46,17 +41,10 @@ public class GuessNumberV2 {
                         i--;
                     }
                 }
-
             }
-//            if (input == 2) {
-//                min = guess;
-//            }
-//            if (input == 3) {
-//                break;
-//            }
         }
         System.out.println("Wygrałem!");
         System.out.println("Zgadłem w " + i + " próbach.");
+        System.out.println("END GAME");
     }
 }
-

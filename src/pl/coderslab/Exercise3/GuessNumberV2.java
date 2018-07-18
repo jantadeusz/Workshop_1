@@ -48,3 +48,6 @@ public class GuessNumberV2 {
         System.out.println("END GAME");
     }
 }
+// musisz zabezpieczyc algorytm przed wprowadzeniem jakich
+// prosba o wartosc i wewnatrz metody dopasowanie do konkretnej wartosci stringa
+

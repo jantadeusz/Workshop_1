@@ -13,41 +13,43 @@ public class GuessNumberV2 {
         int min = 0;
         int max = 1000;
         int i = 0;
-        int input = 0;
+        String input;
         while (true) {
             int guess = (max - min) / 2 + min;
             System.out.println("Zgaduję: " + guess);
-            System.out.println("Pobierz odpowiedź z zestawu:  za dużo, za mało, zgadłeś.");
             i++;
-            System.out.println("Zgadłem? (wpisz w konsoli: '1'-tak, '2'-nie): ");
-            input = scan.nextInt();
-            if (input == 1) {
+            System.out.println("Zgadłem? (wpisz w konsoli: 'tak' lub 'nie'): ");
+            input = scan.nextLine();
+            if (input.equals("tak")) {
                 break;
-            }
-            if (input == 2) {
+            } else if (input.equals("nie")) {
                 System.out.println("Za dużo? (wpisz w konsoli: '1'-tak, '2'-nie): ");
-                input = scan.nextInt();
-                if (input == 1) {
+                input = scan.nextLine();
+                if (input.equals("tak")) {
                     max = guess;
-                }
-                if (input == 2) {
+                } else if (input.equals("nie")) {
                     System.out.println("Za mało? (wpisz w konsoli: '1'-tak, '2'-nie): ");
-                    input = scan.nextInt();
-                    if (input == 1) {
+                    input = scan.nextLine();
+                    if (input.equals("tak")) {
                         min = guess;
-                    }
-                    if (input == 2) {
+                    } else if (input.equals("nie")) {
                         System.out.println("Nie oszukuj!");
                         i--;
+                    } else {
+                        System.out.println("Nie podano poprawnego wyrażenia : 'tak' / 'nie'. Spóbuj jeszcze raz.");
+                        i--;
                     }
+                } else {
+                    System.out.println("Nie podano poprawnego wyrażenia : 'tak' / 'nie'. Spóbuj jeszcze raz.");
+                    i--;
                 }
+            } else {
+                System.out.println("Nie podano poprawnego wyrażenia : 'tak' / 'nie'. Spóbuj jeszcze raz.");
+                i--;
             }
         }
-        System.out.println("Wygrałem!");
         System.out.println("Zgadłem w " + i + " próbach.");
         System.out.println("END GAME");
     }
 }
-// musisz zabezpieczyc algorytm przed wprowadzeniem jakich
-// prosba o wartosc i wewnatrz metody dopasowanie do konkretnej wartosci stringa
 

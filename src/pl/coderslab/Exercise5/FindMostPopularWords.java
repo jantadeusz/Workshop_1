@@ -202,6 +202,5 @@ public class FindMostPopularWords {
         Arrays.sort(finalRanking, Collections.reverseOrder());
         return finalRanking;
     }
-
 }
 

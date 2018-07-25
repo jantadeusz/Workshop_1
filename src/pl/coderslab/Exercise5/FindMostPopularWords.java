@@ -1,23 +1,13 @@
 package pl.coderslab.Exercise5;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.StringTokenizer;
-
+import java.io.*;
+import java.util.*;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
-import java.io.FileWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.*;
 
 public class FindMostPopularWords {
 
@@ -89,15 +79,8 @@ public class FindMostPopularWords {
         }
     }
 
-    // created methods @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-    public static ArrayList<String> createIgnoredWords() {
-        ArrayList<String> ignoredWords = new ArrayList<>();
-        ignoredWords.addAll(Arrays.asList("oraz", "ponieważ", "być", "nie", "pod", "zaraz", "tym", "tylko", "ten",
-                "tego", "takim", "skąd", "się", "oto", "niż", "która", "które", "który", "jak", "dla", "dlaczego",
-                "czy", "onet", "wp", "jest", "tak", "ale"));
-        return ignoredWords;
-    }
+    // created methods @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
     public static String[] getHtmlTitles(String[] urls, String[] cssQueries) {
         String[] htmlTitles = new String[0];
@@ -132,6 +115,14 @@ public class FindMostPopularWords {
             System.out.println("Sentence: " + i + ">>> " + cleanedSentences[i]);
         }
         return cleanedSentences;
+    }
+
+    public static ArrayList<String> createIgnoredWords() {
+        ArrayList<String> ignoredWords = new ArrayList<>();
+        ignoredWords.addAll(Arrays.asList("oraz", "ponieważ", "być", "nie", "pod", "zaraz", "tym", "tylko", "ten",
+                "tego", "takim", "skąd", "się", "oto", "niż", "która", "które", "który", "jak", "dla", "dlaczego",
+                "czy", "onet", "wp", "jest", "tak", "ale"));
+        return ignoredWords;
     }
 
     public static String[] getWordsFromTitles(String[] cleanedTitles) {
